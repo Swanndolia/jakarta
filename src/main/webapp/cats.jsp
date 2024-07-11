@@ -10,6 +10,7 @@
 <%@include file="WEB-INF/header.html" %>
 <main>
     <section>
+     <c:if test="${cats.size() != 0}">
         <table class="table-bordered bg-dark">
             <c:forEach items="${cats}" var="cat">
                 <tr class="text-white">
@@ -19,7 +20,10 @@
                     <td>${cat.birthDate}</td>
                 </tr>
             </c:forEach>
-            <p>vous n'avez aucun chat dans votre liste</p>
+            </c:if>
+            <c:if test="${cats.size() == 0}">
+                <p>vous n'avez aucun chat dans votre liste</p>
+            </c:if>
         </table>
     </section>
     <section>

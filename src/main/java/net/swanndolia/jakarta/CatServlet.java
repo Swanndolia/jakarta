@@ -15,7 +15,6 @@ public class CatServlet extends HttpServlet {
     List<Cat> cats = new ArrayList<>();
 
     public void init() {
-        cats.add(new Cat("test", "test", "test", LocalDate.now()));
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
