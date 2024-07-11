@@ -27,7 +27,7 @@
         </table>
     </section>
     <section>
-        <form action="add" method="post">
+        <form action="" method="post">
             <label class="form-label">Name:
                 <input type="text" name="name">
             </label>
