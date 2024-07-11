@@ -12,6 +12,11 @@ public class Person {
         this.lastname = lastname;
         this.age = new Random().nextInt(100);
     }
+    public Person(String firstname, String lastname,int age) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.age = age;
+    }
 
     public String getFirstname() {
         return firstname;
