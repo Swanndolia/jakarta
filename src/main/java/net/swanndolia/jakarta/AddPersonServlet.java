@@ -14,8 +14,12 @@ import java.util.List;
 @WebServlet(name = "add-person-servlet", value = "/person/add")
 public class AddPersonServlet extends HttpServlet {
 
+    List<Person> persons = new ArrayList<Person>();
+
+    public void init() throws ServletException {
+    }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Person> persons = new ArrayList<Person>();
         Person person = new Person(request.getParameter("firstname"), request.getParameter("lastname"), Integer.parseInt(request.getParameter("age")));
         persons.add(person);
         request.setAttribute("persons", persons);
@@ -23,6 +27,7 @@ public class AddPersonServlet extends HttpServlet {
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        request.setAttribute("persons", persons);
         request.getRequestDispatcher("/persons.jsp").forward(request, response);
     }
 }
